@@ -2,6 +2,7 @@ import './App.css'
 import {useSelector,useDispatch} from 'react-redux'
 import Counter from './componenets/Counter.jsx'
 import Bonus from './componenets/Bonus.jsx'
+import Admin from './componenets/Admin.jsx'
 
 function App() {
   const inc = useSelector(state => state.counter.value)
@@ -15,8 +16,12 @@ function App() {
  </div >
       <Counter />
       <Bonus />
-      <h3>Total Points:{ bonusInc}</h3>
-      </>
+      <h3>Total Points:{bonusInc}</h3>
+      
+      <Admin/>
+    </>
+    
+    
   )
 }
 

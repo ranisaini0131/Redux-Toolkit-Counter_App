@@ -29,14 +29,14 @@ export const counterSlice = createSlice({
     },
 
     extraReducers: (builder) => {
-        builder.addCase(getUserByAccount.fulfilled, (state, action) => {
+        builder.addCase(getUserByAccount.pending, (state, action) => {
             state.value = action.payload
             state.pending = false
         })
             .addCase(getUserByAccount.fulfilled, (state, action) => {
                 state.pending = true
             })
-            .addCase(getUserByAccount.fulfilled, (state, action) => {
+            .addCase(getUserByAccount.rejected, (state, action) => {
                 state.error = action.error
             })
 
@@ -44,6 +44,6 @@ export const counterSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const { increment, decrement, incrementByAmount, getUserByAccoun } = counterSlice.actions
 
 export default counterSlice.reducer
